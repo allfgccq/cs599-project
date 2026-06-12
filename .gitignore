@@ -1,0 +1,49 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Chainlit
+.chainlit/
+public/
+
+# Test files
+test_*.py
+*.html
+
+# Credentials
+credentials.json
+
+# Chinese output files
+*.html
+
+# Temporary directories
+.files/

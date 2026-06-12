@@ -2,7 +2,7 @@
 
 基于大语言模型的智能旅行规划助手，支持多智能体协作、记忆机制和动态行程规划。
 
-## 功能特性
+## ✨ 功能特性
 
 - 🗺️ **智能行程规划**：根据用户预算、时间和偏好生成个性化旅行方案
 - 🍽️ **美食推荐**：智能推荐当地特色餐厅，避免重复
@@ -13,9 +13,8 @@
 - 🧠 **双轨记忆系统**：短期记忆保持对话上下文，长期记忆存储用户偏好
 - 🔄 **状态回滚**：支持回滚到上一步行程，方便比较不同方案
 - ⚠️ **冲突检测**：自动检测时间冲突和预算超支
-- 🌤️ **实时数据**：集成高德地图和和风天气API
 
-## 技术栈
+## 🛠️ 技术栈
 
 - Python 3.9+
 - Chainlit - Web UI框架
@@ -25,7 +24,45 @@
 - 高德地图API - 路线查询
 - 和风天气API - 天气查询
 
-## 快速开始
+## 📁 项目结构
+
+```
+cs599-project/
+├── docs/                    # 项目文档
+│   ├── CS599_大作业报告.pdf   # 最终提交的报告（PDF）
+│   └── architecture.md       # 详细架构说明
+├── src/                      # 项目源代码
+│   ├── agents/               # 智能体模块
+│   │   ├── travel_manager.py    # 旅行管理主Agent
+│   │   ├── budget_agent.py      # 预算管理Agent
+│   │   ├── food_agent.py        # 美食推荐Agent
+│   │   └── content_agent.py     # 内容生成Agent
+│   ├── tools/                # 工具模块
+│   │   ├── attraction_tools.py  # 景点查询工具
+│   │   ├── hotel_tools.py       # 酒店预订工具
+│   │   ├── restaurant_tools.py  # 餐厅推荐工具
+│   │   ├── map_tools.py         # 地图工具
+│   │   ├── weather_tools.py     # 天气查询工具
+│   │   └── cost_tools.py        # 费用计算工具
+│   ├── graph/                # 状态图管理
+│   ├── memory/               # 记忆系统
+│   ├── utils/                # 工具函数
+│   ├── app.py                # 主应用入口
+│   ├── main.py               # 命令行入口
+│   ├── map_generator.py      # 地图生成模块
+│   ├── amap_api.py           # 高德地图API封装
+│   ├── transport_ticket.py   # 交通票务模块
+│   └── google_calendar.py    # Google日历集成
+├── tests/                    # 测试用例
+├── Specs/                    # 规格文档
+├── README.md                 # 项目说明
+├── requirements.txt          # 依赖清单
+├── .gitignore               # Git忽略配置
+├── .env.example             # 环境变量示例
+└── LICENSE                  # 开源协议
+```
+
+## 🚀 快速开始
 
 ### 安装依赖
 
@@ -44,32 +81,10 @@ cp .env.example .env
 ### 运行项目
 
 ```bash
-chainlit run app.py
+chainlit run src/app.py
 ```
 
-## 项目结构
-
-```
-TravAgent/
-├── Specs/                    # 规格文档
-│   ├── product_spec.md       # 产品规格
-│   ├── architecture_spec.md  # 架构规格
-│   └── api_spec.md           # API规格
-├── src/                      # 源代码
-│   ├── agents/               # 智能体模块
-│   ├── tools/                # 工具模块
-│   ├── graph/                # 状态图
-│   ├── memory/               # 记忆系统
-│   └── utils/                # 工具函数
-├── tests/                    # 测试用例
-├── public/                   # 静态资源
-├── app.py                    # 主应用入口
-├── main.py                   # 命令行入口
-├── requirements.txt          # 依赖清单
-└── README.md                 # 项目说明
-```
-
-## 课程信息
+## 📝 课程信息
 
 **课程**: 企业级应用软件设计与开发  
 **项目**: 智能旅行助手 (TravAgent)  
@@ -80,6 +95,6 @@ TravAgent/
 **指导教师**: 戚欣  
 **提交日期**: 2026年6月22日
 
-## 许可证
+## 📄 许可证
 
 MIT License

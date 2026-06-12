@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TravAgent - 杭州旅行路线单</title>
+    <style>
+        @media screen {
+            body { font-family: 'Microsoft YaHei', sans-serif; margin: 40px; background: #f8f9fa; }
+            .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        }
+        @media print {
+            body { font-family: 'Microsoft YaHei', sans-serif; margin: 0; background: white; }
+            .container { max-width: 100%; margin: 0; background: white; padding: 20px; border-radius: 0; box-shadow: none; }
+            .print-btn { display: none; }
+        }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; font-size: 28px; }
+        .header-info { color: #7f8c8d; margin-bottom: 30px; }
+        .day { margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 12px; }
+        .day h2 { color: #3498db; margin-top: 0; }
+        .attraction { margin: 15px 0; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #3498db; }
+        .attraction h3 { margin-top: 0; color: #2c3e50; }
+        .transport { color: #e67e22; margin: 10px 0 10px 20px; }
+        .cost { font-weight: bold; color: #e74c3c; font-size: 16px; }
+        .summary { margin-top: 30px; padding: 25px; background: #ecf0f1; border-radius: 12px; }
+        .summary h3 { color: #2c3e50; margin-top: 0; }
+        .timeline { position: relative; }
+        .hotel { margin: 30px 0; padding: 20px; background: #fff3e0; border-radius: 12px; border-left: 4px solid #ff9800; }
+        .hotel h2 { color: #e65100; margin-top: 0; }
+        .hotel-info { padding: 15px; background: white; border-radius: 8px; }
+        .hotel-info h3 { margin-top: 0; color: #2c3e50; }
+        .weather-section { margin: 30px 0; padding: 20px; background: #e3f2fd; border-radius: 12px; border-left: 4px solid #2196f3; }
+        .weather-section h2 { color: #1976d2; margin-top: 0; }
+        .weather-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+        .weather-day { flex: 1; min-width: 100px; text-align: center; padding: 15px; background: white; border-radius: 8px; }
+        .weather-date { font-weight: bold; color: #2c3e50; }
+        .weather-icon { font-size: 32px; }
+        .weather-desc { color: #7f8c8d; }
+        .weather-temp { font-weight: bold; color: #3498db; }
+        .print-btn { 
+            display: block;
+            margin: 20px auto;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .print-btn:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>杭州旅行路线单</h1>
+        <div class="header-info">
+            <p>生成日期: 2026-06-12 16:57</p>
+            <p>出发地: 武汉 | 旅行天数: 3天 | 预算: ¥3000元</p>
+        </div>
+        
+        
+        <div class="weather-section">
+            <h2>🌤️ 天气预报</h2>
+            <div class="weather-grid">
+        
+                <div class="weather-day">
+                    <p class="weather-date">2026-06-13</p>
+                    <p class="weather-icon">☀️</p>
+                    <p class="weather-desc">晴转多云</p>
+                    <p class="weather-temp">20°C ~ 33°C</p>
+                </div>
+            
+                <div class="weather-day">
+                    <p class="weather-date">2026-06-14</p>
+                    <p class="weather-icon">🌤️</p>
+                    <p class="weather-desc">多云</p>
+                    <p class="weather-temp">20°C ~ 29°C</p>
+                </div>
+            
+                <div class="weather-day">
+                    <p class="weather-date">2026-06-15</p>
+                    <p class="weather-icon">🌧️</p>
+                    <p class="weather-desc">小雨</p>
+                    <p class="weather-temp">25°C ~ 35°C</p>
+                </div>
+            
+            </div>
+        </div>
+        
+        
+        
+        <div class="hotel">
+            <h2>🏨 住宿安排</h2>
+            <div class="hotel-info">
+                <h3>全季酒店</h3>
+                <p>星级: 4⭐ | 位置: 西溪湿地</p>
+                <p>地址: 西湖区文二西路803号</p>
+                <p>评分: 4.5分 | 价格: ¥420元/晚</p>
+                <p>总计: ¥840元 (2晚)</p>
+            </div>
+        </div>
+
+        
+        
+    <div class="day">
+        <h2>Day 1 - 2026-06-12</h2>
+        <div class="timeline">
+
+            <div class="attraction">
+                <h3>西湖</h3>
+                <p>类型: 自然景观 | 评分: 4.9 | 时长: 3小时</p>
+                <p>门票: ¥0元</p>
+            </div>
+
+            <div class="transport">
+                <p>🚇 地铁: 西湖 → 灵隐寺，约3分钟，费用¥5元</p>
+            </div>
+
+            <div class="attraction">
+                <h3>灵隐寺</h3>
+                <p>类型: 文化古迹 | 评分: 4.8 | 时长: 2小时</p>
+                <p>门票: ¥75元</p>
+            </div>
+
+        </div>
+        <p>午餐: 牛New寿喜烧(来福士店)</p>
+        <p>晚餐: 王胜利长沙家菜馆(杭州首店)</p>
+        <p class="cost">当日预计: ¥230元</p>
+    </div>
+
+    <div class="day">
+        <h2>Day 2 - 2026-06-14</h2>
+        <div class="timeline">
+
+            <div class="attraction">
+                <h3>雷峰塔</h3>
+                <p>类型: 文化古迹 | 评分: 4.6 | 时长: 1.5小时</p>
+                <p>门票: ¥40元</p>
+            </div>
+
+            <div class="transport">
+                <p>🚇 地铁: 雷峰塔 → 西溪湿地，约5分钟，费用¥6元</p>
+            </div>
+
+            <div class="attraction">
+                <h3>西溪湿地</h3>
+                <p>类型: 自然景观 | 评分: 4.7 | 时长: 4小时</p>
+                <p>门票: ¥80元</p>
+            </div>
+
+        </div>
+        <p>午餐: 王胜利长沙家菜馆(杭州首店)</p>
+        <p>晚餐: 牛New寿喜烧(来福士店)</p>
+        <p class="cost">当日预计: ¥276元</p>
+    </div>
+
+    <div class="day">
+        <h2>Day 3 - 2026-06-15</h2>
+        <div class="timeline">
+
+        </div>
+        <p>午餐: （返程较早，建议提前准备路上餐食）</p>
+        <p>晚餐: </p>
+        <p class="cost">当日预计: ¥50元</p>
+    </div>
+
+        
+        <div class="summary">
+            <h3>费用汇总</h3>
+            <p>总预计费用: ¥2264元</p>
+            <p>预算状态: 未超预算</p>
+        </div>
+        
+        <button class="print-btn" onclick="window.print()">🖨️ 打印路线单</button>
+    </div>
+</body>
+</html>

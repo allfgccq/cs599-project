@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试地图</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        #map { width: 800px; height: 600px; border: 2px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Leaflet地图测试</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 初始化地图
+        var map = L.map('map').setView([30.27, 120.15], 13);
+        
+        // 添加OpenStreetMap底图
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        
+        // 添加标记点
+        var attractions = [
+            {name: '西湖', lat: 30.2741, lng: 120.1552},
+            {name: '灵隐寺', lat: 30.2964, lng: 120.1416},
+            {name: '雷峰塔', lat: 30.2337, lng: 120.1618}
+        ];
+        
+        attractions.forEach(function(attraction, idx) {
+            var marker = L.marker([attraction.lat, attraction.lng]).addTo(map);
+            marker.bindPopup('<strong>' + attraction.name + '</strong>');
+        });
+        
+        // 绘制路线
+        var routePoints = [
+            [30.2741, 120.1552],  // 西湖
+            [30.2964, 120.1416]   // 灵隐寺
+        ];
+        
+        L.polyline(routePoints, {color: '#3498db', weight: 6}).addTo(map);
+        
+        console.log('地图初始化完成');
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* TravAgent 2.0 自定义样式 */
+
+/* 整体样式 */
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #06b6d4;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --dark-bg: #0f172a;
+    --dark-card: #1e293b;
+    --dark-border: #334155;
+}
+
+/* 消息气泡样式 */
+.cl-message {
+    border-radius: 16px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    transition: all 0.3s ease;
+}
+
+.cl-message:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* 用户消息 */
+.cl-user-message {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    color: white !important;
+}
+
+/* 助手消息 */
+.cl-assistant-message {
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+/* 侧边栏卡片 */
+.cl-card {
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+    overflow: hidden;
+}
+
+.cl-card:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+/* 按钮样式 */
+.cl-button {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.cl-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* 操作按钮 */
+.cl-action-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    border: none !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    margin-right: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+.cl-action-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* 输入框 */
+.cl-input input {
+    border-radius: 12px !important;
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+.cl-input input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* 侧边栏标题 */
+.cl-sidebar h3 {
+    color: var(--primary-color) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+}
+
+/* 状态灯样式 */
+.status-online {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+/* 代码块样式 */
+pre {
+    background: #0f172a !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Fira Code', 'Monaco', monospace !important;
+    font-size: 13px !important;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--dark-border);
+}
+
+th {
+    background: var(--dark-card);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 时间轴样式 */
+.timeline-container {
+    position: relative;
+    padding-left: 24px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+}
+
+.timeline-item {
+    position: relative;
+    padding: 12px 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid var(--dark-bg);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cl-message {
+    animation: fadeIn 0.3s ease;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-border);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}

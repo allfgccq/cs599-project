@@ -1,0 +1,88 @@
+# TravAgent - 智能旅行助手
+
+基于大语言模型的智能旅行规划助手，支持多智能体协作、记忆机制和动态行程规划。
+
+## 功能特性
+
+- 🗺️ **智能行程规划**：根据用户预算、时间和偏好生成个性化旅行方案
+- 🤝 **多智能体协作**：旅行总管、精算师、特约导游、美食助手协同工作
+- 🧠 **双轨记忆系统**：短期记忆保持对话上下文，长期记忆存储用户偏好
+- 🔄 **状态回滚**：支持回滚到上一步行程，方便比较不同方案
+- ⚠️ **冲突检测**：自动检测时间冲突和预算超支
+- 🌤️ **实时数据**：集成高德地图和和风天气API
+
+## 技术栈
+
+- Python 3.9+
+- LangGraph - 状态机管理
+- LangChain - LLM集成
+- FAISS - 向量数据库
+- 高德地图API - 路线查询
+- 和风天气API - 天气查询
+
+## 快速开始
+
+### 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 配置环境变量
+
+复制 `.env.example` 为 `.env` 并填写API密钥：
+
+```bash
+cp .env.example .env
+```
+
+### 运行项目
+
+```bash
+python main.py
+```
+
+## 项目结构
+
+```
+TravAgent/
+├── Specs/                    # 规格文档
+│   ├── product_spec.md       # 产品规格
+│   ├── architecture_spec.md  # 架构规格
+│   └── api_spec.md           # API规格
+├── src/                      # 源代码
+│   ├── agents/               # 智能体模块
+│   ├── tools/                # 工具函数
+│   ├── memory/               # 记忆系统
+│   ├── graph/                # LangGraph定义
+│   └── utils/                # 工具函数
+├── main.py                   # 主入口
+├── requirements.txt          # 依赖列表
+└── .env                      # 环境变量
+```
+
+## 使用示例
+
+```python
+from src.agents.travel_manager import TravelManager
+
+agent = TravelManager()
+response = agent.chat("我想下周末去杭州玩两天，预算2000元，喜欢自然风光")
+print(response)
+```
+
+## API接口
+
+### 工具列表
+
+| 工具 | 功能 |
+|------|------|
+| get_route_info | 获取路线信息 |
+| get_weather_info | 获取天气信息 |
+| search_attractions | 搜索景点 |
+| search_restaurants | 搜索餐厅 |
+| calculate_cost | 计算费用 |
+
+## 许可证
+
+MIT License

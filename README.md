@@ -11,8 +11,6 @@
 - 🏨 **酒店预订**：根据预算推荐合适酒店
 - 🤝 **多智能体协作**：旅行总管、精算师、特约导游、美食助手协同工作
 - 🧠 **双轨记忆系统**：短期记忆保持对话上下文，长期记忆存储用户偏好
-- 🔄 **状态回滚**：支持回滚到上一步行程，方便比较不同方案
-- ⚠️ **冲突检测**：自动检测时间冲突和预算超支
 
 ## 🛠️ 技术栈
 
@@ -30,36 +28,18 @@
 cs599-project/
 ├── docs/                    # 项目文档
 │   ├── CS599_大作业报告.pdf   # 最终提交的报告（PDF）
-│   └── architecture.md       # 详细架构说明
+│   └── architecture.md       # 详细架构说明（可选）
 ├── src/                      # 项目源代码
 │   ├── agents/               # 智能体模块
-│   │   ├── travel_manager.py    # 旅行管理主Agent
-│   │   ├── budget_agent.py      # 预算管理Agent
-│   │   ├── food_agent.py        # 美食推荐Agent
-│   │   └── content_agent.py     # 内容生成Agent
 │   ├── tools/                # 工具模块
-│   │   ├── attraction_tools.py  # 景点查询工具
-│   │   ├── hotel_tools.py       # 酒店预订工具
-│   │   ├── restaurant_tools.py  # 餐厅推荐工具
-│   │   ├── map_tools.py         # 地图工具
-│   │   ├── weather_tools.py     # 天气查询工具
-│   │   └── cost_tools.py        # 费用计算工具
 │   ├── graph/                # 状态图管理
 │   ├── memory/               # 记忆系统
 │   ├── utils/                # 工具函数
-│   ├── app.py                # 主应用入口
-│   ├── main.py               # 命令行入口
-│   ├── map_generator.py      # 地图生成模块
-│   ├── amap_api.py           # 高德地图API封装
-│   ├── transport_ticket.py   # 交通票务模块
-│   └── google_calendar.py    # Google日历集成
-├── tests/                    # 测试用例
-├── Specs/                    # 规格文档
-├── README.md                 # 项目说明
+│   └── app.py                # 主应用入口
+├── README.md                 # 项目入口，必填
+├── .gitignore                # 排除编译文件
 ├── requirements.txt          # 依赖清单
-├── .gitignore               # Git忽略配置
-├── .env.example             # 环境变量示例
-└── LICENSE                  # 开源协议
+└── LICENSE                   # 开源协议（Public Repository 必填）
 ```
 
 ## 🚀 快速开始
@@ -72,10 +52,17 @@ pip install -r requirements.txt
 
 ### 配置环境变量
 
-复制 `.env.example` 为 `.env` 并填写API密钥：
+创建 `.env` 文件并填写API密钥：
 
 ```bash
-cp .env.example .env
+# 高德地图API
+AMAP_KEY=your_amap_key
+
+# 和风天气API
+WEATHER_KEY=your_weather_key
+
+# OpenAI API
+OPENAI_API_KEY=your_openai_key
 ```
 
 ### 运行项目

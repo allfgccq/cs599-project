@@ -84,4 +84,4 @@ chainlit run src/app.py
 
 ## 📄 许可证
 
-MIT License
+pache-2.0 license
